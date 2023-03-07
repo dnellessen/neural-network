@@ -4,7 +4,11 @@
 
 Neural network that can be trained to recognize digits, which is its main application for this project.
 
-https://user-images.githubusercontent.com/108455731/223578056-f217e601-ee9a-4c6a-89a2-732a32038689.mov
+
+
+https://user-images.githubusercontent.com/108455731/223581880-e0bcd665-00d9-48d5-9e12-a9f3dbfde508.mov
+
+
 
 <br/>
 
