@@ -1,0 +1,94 @@
+h1 {
+    margin-top: 1em;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    margin: 0.7em;
+    bottom: 0;
+}
+
+p {
+    margin: 0.1em;
+}
+
+
+#prediction {
+    font-size: 1.3em;
+    margin: 1em;
+}
+
+#github-footer {
+    color: black;
+    text-decoration: none;
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 78vh; */
+}
+
+.drawing-area {
+    box-shadow: 0 0 10px 0 #d0d0d0;
+    cursor: crosshair;
+}
+
+.btn {
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .25rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+.btn:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.btn:focus-visible {
+    box-shadow: none;
+}
+
+.clear-button {
+    margin: 2em;
+}
+
+.details-button {
+    width: 9em;
+    margin-bottom: 1em;
+}
+
+.collapsible-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#details {
+    display: none;
+    overflow: hidden;
+}
