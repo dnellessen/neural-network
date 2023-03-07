@@ -44,14 +44,10 @@ Neural network that can be trained to recognize digits, which is its main applic
 
 ### Forward Propagation
 The weighted sum of a layer is calculated by the dot product of the weights and the inputs, plus the biases:
-$$
-Z_L = W_L \cdot A_{L-1} + b_L
-$$
+$$Z_L = W_L \cdot A_{L-1} + b_L$$
 
 To get the activations, the weighted sum is passed through an activation function like Sigmoid or ReLU:
-$$
-A_L = \sigma(Z_L)
-$$
+$$A_L = \sigma(Z_L)$$
 
 
 
@@ -64,61 +60,46 @@ Gradient Descent:
 Calculate the derivative of the cost function with respect to the weights and biases using the chain rule:
 
 Output Layer:
-$$
-X_L = \frac{\partial A_L}{\partial Z_L} \cdot \frac{\partial C_0}{\partial A_L}
-$$
-$$
-\frac{\partial C_0}{\partial W_L} = \frac{\partial Z_L}{\partial W_L} \cdot X_L = A_{L-1} \cdot X_L
-$$
-$$
-\frac{\partial C_0}{\partial b_L} = \frac{\partial Z_L}{\partial b_L} \cdot X_L = 1 \cdot X_L
-$$
+$$X_L = \frac{\partial A_L}{\partial Z_L} \cdot \frac{\partial C_0}{\partial A_L}$$
+$$\frac{\partial C_0}{\partial W_L} = \frac{\partial Z_L}{\partial W_L} \cdot X_L = A_{L-1} \cdot X_L$$
+$$\frac{\partial C_0}{\partial b_L} = \frac{\partial Z_L}{\partial b_L} \cdot X_L = 1 \cdot X_L$$
 
 Hidden Layers:
-$$
-X_{L-1} = \frac{\partial A_{L-1}}{\partial Z_{L-1}} \cdot \frac{\partial Z_L}{\partial A_{L-1}} \cdot X_{L}
-$$
-$$
-\frac{\partial C_0}{\partial W_{L-1}} = \frac{\partial Z_{L-1}}{\partial W_{L-1}} \cdot X_{L-1} = A_{L-2} \cdot X_{L-1}
-$$
-$$
-\frac{\partial C_0}{\partial b_{L-1}} = \frac{\partial Z_{L-1}}{\partial b_{L-1}} \cdot X_{L-1} = 1 \cdot X_{L-1}
-$$
+$$X_{L-1} = \frac{\partial A_{L-1}}{\partial Z_{L-1}} \cdot \frac{\partial Z_L}{\partial A_{L-1}} \cdot X_{L}$$
+$$\frac{\partial C_0}{\partial W_{L-1}} = \frac{\partial Z_{L-1}}{\partial W_{L-1}} \cdot X_{L-1} = A_{L-2} \cdot X_{L-1}$$
+$$\frac{\partial C_0}{\partial b_{L-1}} = \frac{\partial Z_{L-1}}{\partial b_{L-1}} \cdot X_{L-1} = 1 \cdot X_{L-1}$$
 
 Then these gradients are added to the layers' weights and bias gradients to later subtract them from the weights and biases (after multiplying them with a learning rate):
-$$ W_L = \alpha \cdot G_{W, L} $$
-$$ b_L = \alpha \cdot G_{b, L} $$
+$$W_L = \alpha \cdot G_{W, L}$$
+$$b_L = \alpha \cdot G_{b, L}$$
 
 ### Matrix Multiplication
 Dot Product
-$$
-\begin{pmatrix}
-w_{1,1}&w_{1,2}&\dots &w_{1,n}\\
-w_{2,1}&w_{2,2}&\dots &w_{2,n}\\
-\vdots &\vdots &\ddots &\vdots \\
-w_{m,1}&w_{m,2}&\dots &w_{m,n}
+
+$$ \begin{pmatrix} 
+w_{1,1}&w_{1,2}&\dots &w_{1,n}\\ 
+w_{2,1}&w_{2,2}&\dots &w_{2,n}\\ 
+\vdots &\vdots &\ddots &\vdots \\ 
+w_{m,1}&w_{m,2}& \dots  &w_{m,n} 
 \end{pmatrix}
-\cdot
+\cdot 
 \begin{pmatrix}
 v_1 \\
-v_2 \\
-\vdots \\
-v_n
-\end{pmatrix}
-=
-\begin{pmatrix}
-\sum_{k=1}^n w_{k,1}v_{k}\\
-\sum_{k=1}^n w_{k,2}v_{k}\\
-\vdots \\
-\sum_{k=1}^n w_{k,m}v_{k}\\
-
-\end{pmatrix}
-$$
+v_2 \\ 
+\vdots \\ 
+v_n 
+\end{pmatrix} = 
+\begin{pmatrix} 
+\sum_{k=1}^n w_{k,1}v_{k}\\ 
+\sum_{k=1}^n w_{k,2}v_{k}\\ 
+\vdots \\ 
+\sum_{k=1}^n w_{k,m}v_{k}\\ 
+\end{pmatrix} $$
 
 
 Outer Product
-$$
-\begin{pmatrix}
+
+$$ \begin{pmatrix}
 a_1 \\
 a_2 \\
 \vdots \\
@@ -130,19 +111,17 @@ x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{pmatrix}
-=
+\end{pmatrix} =
 \begin{pmatrix}
 a_{1}x_{1}&a_{1}x_{2}&\dots &a_{1}x_{n}\\
 a_{2}x_{1}&a_{2}x_{2}&\dots &a_{2}x_{n}\\
 \vdots &\vdots &\ddots &\vdots \\
 a_{m}x_{1}&a_{m}x_{2}&\dots &a_{m}x_{n}
-\end{pmatrix}
-$$
+\end{pmatrix} $$
 
 Inner Product
-$$
-\begin{pmatrix}
+
+$$ \begin{pmatrix}
 w_{1,1}&w_{1,2}&\dots &w_{1,n}\\
 w_{2,1}&w_{2,2}&\dots &w_{2,n}\\
 \vdots &\vdots &\ddots &\vdots \\
@@ -154,16 +133,13 @@ x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{pmatrix}
-=
+\end{pmatrix} =
 \begin{pmatrix}
 \sum_{k=1}^n w_{1,k}x_{k}\\
 \sum_{k=1}^n w_{2,k}x_{k}\\
 \vdots \\
 \sum_{k=1}^n w_{m,k}x_{k}\\
-
-\end{pmatrix}
-$$
+\end{pmatrix} $$
 
 ### Readings
 * [3blue1brown - Neural Networks](https://www.3blue1brown.com/topics/neural-networks)
