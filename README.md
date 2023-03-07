@@ -4,6 +4,9 @@
 
 Neural network that can be trained to recognize digits, which is its main application for this project.
 
+https://user-images.githubusercontent.com/108455731/223578056-f217e601-ee9a-4c6a-89a2-732a32038689.mov
+
+<br/>
 
 <details>
   <summary>Table of Contents</summary>
@@ -12,9 +15,9 @@ Neural network that can be trained to recognize digits, which is its main applic
         <a href="#about-the-project">About The Project</a>
         <ul>
             <li>
-                <a href="#neural-networks">Math</a>
+                <a href="#math">Math</a>
                 <ul>
-                    <li><a href="#forward-ropagation">Forward Propagation</a></li>
+                    <li><a href="#forward-propagation">Forward Propagation</a></li>
                     <li><a href="#backward-propagation">Backward Propagation</a></li>
                     <li><a href="#matrix-multiplication">Matrix Multiplication</a></li>
                     <li><a href="#readings">Readings</a></li>
@@ -39,7 +42,7 @@ Neural network that can be trained to recognize digits, which is its main applic
 ## About The Project
 
 ### Math
-![alt text](https://www.mdpi.com/BDCC/BDCC-02-00016/article_deploy/html/images/BDCC-02-00016-g001.png)
+<img src="https://www.mdpi.com/BDCC/BDCC-02-00016/article_deploy/html/images/BDCC-02-00016-g001.png" width="70%">
 
 
 ### Forward Propagation
@@ -177,6 +180,14 @@ $ git clone https://github.com/dnellessen/neural-network.git
 
 ## Usage
 In the `main.py` file you can load or train a network and see the plotted digit with the network's prediction. Read the docstring in the file for more information.
+
+To write digits yourself and see what digit the network thinks it is, simply run the Flask server.
+```bash
+$ pwd
+.../neural-network
+
+$ python3 server/app.py
+```
 
 
 ## License
