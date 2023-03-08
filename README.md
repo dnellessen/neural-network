@@ -45,7 +45,8 @@ https://user-images.githubusercontent.com/108455731/223581880-e0bcd665-00d9-48d5
 ## About The Project
 
 ### Math
-<img src="https://www.mdpi.com/BDCC/BDCC-02-00016/article_deploy/html/images/BDCC-02-00016-g001.png" width="70%">
+
+![alt text](https://www.mdpi.com/BDCC/BDCC-02-00016/article_deploy/html/images/BDCC-02-00016-g001.png)
 
 
 ### Forward Propagation
